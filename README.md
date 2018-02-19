@@ -26,6 +26,9 @@ After trial and error the following hyperparameters were selected:
 - epochs: 50
 - batch_size: 5
 
+Average Loss decreased from 0.65 (5 epochs) to 0.035 (50 epochs). See the sample images below to notice the segmentation enhacement as epochs increase.
+
+
 ### Sample Images after training
 ##### After 5 Epochs
 ![5 epochs um_000000](https://user-images.githubusercontent.com/15799394/36393884-8badeda2-15d7-11e8-9afb-5022c1aee3e1.png)
