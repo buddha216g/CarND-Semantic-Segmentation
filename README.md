@@ -27,7 +27,14 @@ After trial and error the following hyperparameters were selected:
 - batch_size: 5
 
 ### Sample Images after training
-
+##### After 5 Epochs
+![5 epochs um_000000](https://user-images.githubusercontent.com/15799394/36393884-8badeda2-15d7-11e8-9afb-5022c1aee3e1.png)
+##### After 30 Epochs
+![30 epochs um_000000](https://user-images.githubusercontent.com/15799394/36393885-8bdb4f0e-15d7-11e8-85fe-74fb5b3c91c2.png)
+##### After 48 Epochs
+![48 epochs um_000000](https://user-images.githubusercontent.com/15799394/36393886-8c0933b0-15d7-11e8-91f1-4d3233233a65.png)
+##### After 50 Epochs
+![50 epochs um_000000](https://user-images.githubusercontent.com/15799394/36393888-8c3a4fd6-15d7-11e8-9af4-50f3a65bff8d.png)
 
 
 
