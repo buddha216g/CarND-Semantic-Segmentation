@@ -26,6 +26,9 @@ After trial and error the following hyperparameters were selected:
 - epochs: 50
 - batch_size: 5
 
+### Sample Images after training
+
+
 
 
 ### Setup
