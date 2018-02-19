@@ -2,6 +2,32 @@
 ### Introduction
 In this project, you'll label the pixels of a road in images using a Fully Convolutional Network (FCN).
 
+### Model
+
+A pre-trained VGG-16 network was used to extract input, keep probability, layer 3, layer 4 and layer 7. Final fully connected layer was converted to a 1x1 convolution with depth 2 (2 classes: road vs not-road). Performance is improved through the use of skip connections, performing 1x1 convolutions ( layers 3 and 4) and adding them element-wise (through transposed convolution). Every created convolutional and deconvolutional layer use a random-normal kernel initializer with standard deviation 0.01 and a L2 kernel regularizer with L2 0.001.
+
+The following layers were created from pre-trained VGG.
+- Convolutional layer (conv_1x1_7) with kernel 1 from VGG's layer 7 to maintain spatial information.
+- Deconvolutional layer (upsample_1) with kernel 4 and stride 2 from the conv_1x1_7 layer
+- Convolutional layer (conv_1x1_4) with kernel 1 from VGG's layer 4 (vgg_layer4_out)
+- skip layer (skip_1) created by adding conv_1x1_4 and upsample_1
+- Deconvolutional layer(upsample_2) with kernel 4 and stride 2 from skip_1
+- Convolutional layer (conv_1x1_3) with kernel 1 from VGG's layer 3 (vgg_layer3_out)
+- skip layer (second_2) created by adding conv_1x1_3 and upsample_2
+- Deconvolutional layer (nn_last_layer) with kernel 16 and stride 8 from the second skip layer (second_2).
+
+The cross-entropy loss functon, and Adam optimizer were used to train the network.
+
+Several hyper parameter combinations epochs (5,30,48 and 50), learning rate (0.00008,0.00005,0.00001) were used for training.
+
+After trial and error the following hyperparameters were selected:
+- keep_prob: 0.5
+- learning_rate: 0.00001
+- epochs: 50
+- batch_size: 5
+
+
+
 ### Setup
 ##### Frameworks and Packages
 Make sure you have the following is installed:
